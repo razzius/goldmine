@@ -1,0 +1,19 @@
+{
+  "author": "Razzi Abuissa Alex Brashear Brian Sladek ",
+  "name": "goldmine",
+  "description": "Node command line application that uses coverage to find unused lines in libraries you import into your code.  It then removes these unnecessary lines to provide you with a simplified library and hopefully a noticeable difference in the loading time of your webpage.",
+  "version": "0.0.1",
+  "repository": {
+    "url": ""
+  },
+  "main": "./lib/main",
+  "bin": {
+    "goldmine": "./bin/goldmine"
+  },
+  "dependencies": {},
+  "devDependencies": {},
+  "optionalDependencies": {},
+  "engines": {
+    "node": "*"
+  }
+}
