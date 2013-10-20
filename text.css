@@ -1,0 +1,41 @@
+.centertext {
+	text-align: center;
+	font-weight: bold;
+	color: #7A6E6E;
+}
+.smallertext {
+	color: gray;
+	text-align: center;
+	padding-left: 220px;
+	padding-right: 220px;
+	line-height: 130%;
+}
+.menubar {
+	background-color: #B8860B;
+}
+.goldmine {
+	color: yellow !important;
+}
+.gold {
+	background-color: #F0F8FF;
+}
+.links {
+	color: white !important;
+}
+.code {
+	text-align: center;
+}
+.padding {
+	padding-bottom: 10px
+}
+body {
+	background-color: #EDEDED;
+}
+.seconddiv {
+	background-color: white;
+	border-top: 1px solid #ccc;
+}
+.sidebar {
+	color: gray;
+	padding-left: 220px;
+}
