@@ -34,8 +34,20 @@ body {
 .seconddiv {
 	background-color: white;
 	border-top: 1px solid #ccc;
+	border-left: 1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom:1px solid #ccc;
+
 }
 .sidebar {
 	color: gray;
 	padding-left: 220px;
+}
+.bottomdiv {
+	padding-top: 20px;
+}
+.authors {
+	text-align: center;
+	padding-top: 40px;
+	color: gray;
 }
