@@ -96,10 +96,10 @@ function parse_instrumented_code() {
 		json = "{" + json.substring(0, index);
 		semicolon_char = json.lastIndexOf(";");
 		console.log("SEMICOLON AT " + semicolon_char);
-		json = json.substring(0, semicolon_char-1);
+		json = json.substring(0, semicolon_char);
 		fs.writeFile("original.json", json, function() {
-			// var process = require("./process");
-			// process.main();
+			var process = require("./process");
+			process.main();
 		});
 	});
 }
