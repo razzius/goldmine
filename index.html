@@ -8,6 +8,7 @@
 	</title>
 </head>
 <body>
+<div class="container">
 	<nav class="navbar navbar-default menubar" role="navigation">
 			<div class="navbar-header">
 				<a class="navbar-brand goldmine" href="#">GoldMineJS</a>
@@ -17,11 +18,12 @@
 				<li><a href="#" class="links">Creators</a></li>
 			</ul>
 	</nav>
+	</div>
 	<div class="container seconddiv">
 		<div>
-			<h2 class="centertext padding">
-				An easy tool to trim your libraries
-			</h2>
+			<h1 class="centertext padding">
+				Easily trim external libraries
+			</h1>
 			<h4 class="smallertext padding">
 				GoldMine is a command line tool that uses a coverage report to determine what parts of your libraries aren't being used and takes them out so they don't slow down your web pages
 			</h4>
@@ -32,14 +34,32 @@
 			<h5 class="sidebar padding">GoldMine is on npm so it is fast and easy to install!</h5>
 		</div>
 		<div class="col-md-offset-2 col-md-8">
-			<pre style="text-align:left">>sudo npm install -g goldmine</pre>
+			<pre style="text-align:left">$ sudo npm install -g goldmine</pre>
+		</div>
 	</div>
+	<div class="container middlediv paddingtop">
+		<h3 class="sidebar">Command Line Functionality</h3>
+		<h5 class="sidebar padding">GoldMine can be run straignt from your terminal with the following arguments</h5>
+		<div class="col-md-offset-2 col-md-8">
+			<pre style="text-align:left">$ goldmine -t tests.js -c code.js -l library.js</pre>
+		</div>
 	</div>
+	<div class="container enddiv paddingtop">
+		<h3 class="sidebar">Instrumenting</h3>
+		<h5 class="sidebar padding">GoldMine instruments with istanbul, but utilizes its own coverage framework to find unnecessary code</h5>
+		<img src="coverage.png" class="sidebar paddingbottom">
+		<h3 class="sidebar">Remove the code</h3>
+		<h5 class="sidebar padding">Finally GoldMine trims the external libraries so the extra stuff you don't use doesn't way you down</h5>
+		<h3 class="centertext paddingtop padding">Did you know?</h3>
+		<h5 class="centertext">The lower bound of JQuery coverage is only 20%, if you only implement one method you could only be using a quarter of the library</h5>
+		<h5 class="sidebar paddingbottom">This idea can be applicable to much larger libraries as well!  (of course JQuery is a small example)</h5>
+
+	</div>
+
 	<div class="row col-md-offset-3 bottomdiv">
-		<div class="col-lg-6">
-		<img src="nodejs-green.png" href="http://nodejs.org"><img src="phantom.png">
-	</div>
+		<img src="nodejs-green.png" href="http://nodejs.org"><img src="phantom.png"><img src="html5logo.png">
 	</div>
 	<h5 class="authors">Alex Brashear  |  Razzi Abuissa  |  Brian Sladek</h5>
+	<h5 class="authors2">alexjbrashear@gmail | razzi53@gmail | brian.sladek@gmail</h5>
 </body>
 </html>

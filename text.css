@@ -28,6 +28,12 @@
 .padding {
 	padding-bottom: 10px
 }
+.paddingtop {
+	padding-top: 10px;
+}
+.paddingbottom {
+	padding-bottom: 20px;
+}
 body {
 	background-color: #EDEDED;
 }
@@ -36,7 +42,6 @@ body {
 	border-top: 1px solid #ccc;
 	border-left: 1px solid #ccc;
 	border-right:1px solid #ccc;
-	border-bottom:1px solid #ccc;
 
 }
 .sidebar {
@@ -50,4 +55,21 @@ body {
 	text-align: center;
 	padding-top: 40px;
 	color: gray;
+}
+.authors2 {
+	text-align: center;
+	padding-top: 10px;
+	color: gray;
+	padding-bottom: 40px;
+}
+.middlediv {
+	border-left: 1px solid #ccc;
+	border-right:1px solid #ccc;
+	background-color: white;
+}
+.enddiv {
+	border-left: 1px solid #ccc;
+	border-right:1px solid #ccc;
+	border-bottom: 1px solid #ccc;
+	background-color: white;
 }
