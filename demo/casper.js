@@ -12,7 +12,7 @@ casper.test.begin("Create email form", 1, function(test) {
 casper.test.begin("Toggle green block", 1, function(test) {
 	casper.start("http://localhost:8000", function() {
 		this.click(".box");
-		test.assert(this.visible("input"));
+		test.assert(!this.visible("#yellow"));
 		test.done();
 	});
 });
