@@ -7,7 +7,7 @@
   "homepage":"http://razzius.github.io/goldmine/",
   "name": "goldmine",
   "description": "Node command line application that uses coverage to find unused lines in libraries you import into your code.  It then removes these unnecessary lines to provide you with a simplified library and hopefully a noticeable difference in the loading time of your webpage.",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "repository": {
     "type" : "git",
     "url": "https://github.com/razzius/goldmine"
