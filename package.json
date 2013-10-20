@@ -1,9 +1,9 @@
 {
-  "author": {
-    "Razzi Abuissa",
-    "Alex Brashear",
-    "Brian Sladek"
-   },
+  "contributors": [
+    {"name": "Razzi Abuissa"},
+    {"name": "Alex Brashear"},
+    {"name": "Brian Sladek"}
+  ],
   "homepage":"http://razzius.github.io/goldmine/",
   "name": "goldmine",
   "description": "Node command line application that uses coverage to find unused lines in libraries you import into your code.  It then removes these unnecessary lines to provide you with a simplified library and hopefully a noticeable difference in the loading time of your webpage.",
