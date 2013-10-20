@@ -63,7 +63,9 @@ exec('istanbul instrument combined.js', function(error, stdout, stderr) {
 					}
 				});
 				console.log("Made instrumented code readable");
-				exec('node beautiful.js', function() {
+				exec('node beautiful.js', function(error, stdout, stderr) {
+					console.log('Running tests:');
+					console.log(error, stdout, stderr);
 					exec('js-beautify coverage.json', function(error, stdout, stderr) {
 						fs.writeFile("coverage.json", stdout);
 						parse_instrumented_code();
@@ -95,7 +97,7 @@ function parse_instrumented_code() {
 		//remove from last ; to end
 		json = "{" + json.substring(0, index);
 		semicolon_char = json.lastIndexOf(";");
-		console.log("SEMICOLON AT " + semicolon_char);
+		console.log("Trimming coverage report at " + semicolon_char);
 		json = json.substring(0, semicolon_char);
 		fs.writeFile("original.json", json, function() {
 			var process = require("./process");

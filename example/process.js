@@ -3,12 +3,16 @@ module.exports = {
 	main: main
 };
 
+var jsp = require("uglify-js").parser;
+var pro = require("uglify-js").uglify;
+
 function main() {
+	console.log("Processing instrumented code output...");
 	var exec = require('child_process').exec;
 	var fs = require('fs');
 	var cov, lib, code;
 
-	fs.readFile('original.json', 'utf8', function(err, data) {
+	fs.readFile('coverage.json', 'utf8', function(err, data) {
 		if (err) {
 			return console.log(err);
 		}
@@ -23,10 +27,19 @@ function main() {
 					code = comment_bad_code(i, code);
 				}
 			}
-			fs.writeFileSync('lib2.js', code);
+			// remove nested comments
+			code = remove_nested_comments(code);
+			// mangle code!!
+			console.log(code);
+			var options = {mangle: true };
+			var jsp = require('uglify-js').parser;
+			var ast = jsp.parse(code); // parse code and get the initial AST
+			ast = pro.ast_mangle(ast, options); // get a new AST with mangled names
+			ast = pro.ast_squeeze(ast); // get an AST with compression optimizations
+			var final_code = pro.gen_code(ast);
+			fs.writeFile('libf.js', final_code);
 		});
 	});
-
 	function comment_bad_code(statement, data) {
 		var map = cov.statementMap;
 		var start = map[statement].start;
@@ -55,4 +68,31 @@ function main() {
 		return code;
 	}
 
+	function remove_nested_comments(data) {
+		var length = data.length;
+		console.log(length);
+		var depth = 0;
+		for (var i = 0; i < length; i++) {
+			if (data.charAt(i) == "/" && data.charAt(i+1) == "*") {
+				if (depth === 0) {
+					depth++;
+				} else {
+					depth++;
+					prev = data.substring(0, i);
+					rest = data.substring(i+2);
+					data = prev + rest;
+				}
+			} else if (data.charAt(i) == "*" && data.charAt(i+1) == "/") {
+				if (depth === 1) {
+					depth = 0;
+				} else {
+					prev = data.substring(0, i);
+					rest = data.substring(i+2);
+					data = prev + rest;
+					depth--;
+				}
+			}
+		}
+		return data;
+	}
 }
