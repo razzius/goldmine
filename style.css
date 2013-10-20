@@ -1,0 +1,64 @@
+body, html {
+  height: 100%;
+}
+
+ul
+{
+text-align: center;
+list-style-type:none;
+margin:0;
+padding:0;
+font-size: 20px;
+}
+
+li
+{
+display:inline;
+}
+
+.container {
+	width: 80%;
+	height: 100%;
+}
+
+#title {
+	text-align:center;
+}
+
+.tab {
+	cursor:pointer;
+	padding-right:15px;
+}
+
+.nav {
+	padding-top:10px;
+	background:white;
+}
+
+.content {
+	width: 100%;
+	text-align:center;
+}
+#tab1content {
+
+}
+
+#tab2content {
+	display:none;
+}
+
+#tab3content {
+	display:none;
+}
+#tab4content {
+	display:none;
+}
+
+.box {
+	margin-left: 40%;
+	text-align:center;
+	background:gold;
+	margin-top: 20%;
+	height: 200px;
+	width: 20%;
+}
