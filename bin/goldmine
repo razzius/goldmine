@@ -1,24 +1,22 @@
 #!/usr/bin/env node
-// var argv = require('optimist')
-//     .usage('Count the lines in a file.\nUsage: $0')
-//     .demand(['t', 'c','l'])
-//     .alias('t', 'tests').alias('c','code').alias('l','lib')
-//     .describe('t', 'js test file').describe('c', 'code file').describe('l', 'library to be trimmed')
-//     .argv
-// ;
-
-// console.log(argv.lib);
+var argv = require('optimist')
+    .usage('Count the lines in a file.\nUsage: $0')
+    .demand(['c','l'])
+    .alias('c','code').alias('l','lib')
+    .describe('c', 'code file').describe('l', 'library to be trimmed')
+    .argv
+;
 
 var exec = require('child_process').exec;
 var fs = require('fs');
 // read the library
 var lib, code;
-fs.readFile('lib.js', 'utf8', function(err, data) {
+fs.readFile(argv.lib, 'utf8', function(err, data) {
 	if (err) {
 		return console.log(err);
 	}
 	var lib = data;
-	fs.readFile('simple.js', 'utf8', function(err, data) {
+	fs.readFile(argv.code, 'utf8', function(err, data) {
 		if (err) {
 			return console.log(err);
 		}
