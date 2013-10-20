@@ -3,8 +3,7 @@ module.exports = {
 	main: main
 };
 
-var jsp = require("uglify-js").parser;
-var pro = require("uglify-js").uglify;
+var UglifyJS = require("uglify-js");
 
 function main() {
 	console.log("Processing instrumented code output...");
@@ -30,13 +29,9 @@ function main() {
 			// remove nested comments
 			code = remove_nested_comments(code);
 			// mangle code!!
-			console.log(code);
 			var options = {mangle: true };
-			var jsp = require('uglify-js').parser;
-			var ast = jsp.parse(code); // parse code and get the initial AST
-			ast = pro.ast_mangle(ast, options); // get a new AST with mangled names
-			ast = pro.ast_squeeze(ast); // get an AST with compression optimizations
-			var final_code = pro.gen_code(ast);
+			var result = UglifyJS.minify(code, {fromString: true});
+			var final_code = result.code;
 			fs.writeFile('libf.js', final_code);
 		});
 	});
